@@ -121,6 +121,7 @@ const Content=styled.div`
 margin: 30px;
 display: block;
 width: 55%;
+line-height: 1.2;
 @media(max-width: 764px){
     width: 100%;
     margin: 10px

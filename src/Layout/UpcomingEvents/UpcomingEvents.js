@@ -129,7 +129,7 @@ justify-content: space-between;
 `
 const CardContentHeader = styled.h3`
 font-weight: 900;
-padding-bottom: 10px;
+padding: 10px 0;
 `
 const CardContentText = styled.div`
 word-wrap:break-word;
@@ -255,7 +255,7 @@ const UpcomingEvents = () =>{
                 </Card>
                 }
 
-                {offers.length === 0 && <Header id="career">We don't have any work offers for now :(</Header>}
+                {offers.length === 0 ? <Header id="career">We don't have any work offers for now :(</Header> : <Header id="career">Our work offers</Header>}
                 {offers.length >=1 && 
                 offers.map( offer =>{
                     return(

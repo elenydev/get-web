@@ -84,6 +84,7 @@ justify-content: space-between;
 flex: 0 0 auto;
 margin-right: 1px;
 transition: .4s;
+border: .5px solid transparent;
 &:hover{
     transform: scale(1.05);
     border: .5px solid #EA2AD7

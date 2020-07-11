@@ -91,8 +91,8 @@ position: relative;
 `;
 const Circle = styled.div`
 display: flex;
-height: 10%;
-width: 10%;
+width: 100px;
+height: 100px;
 border: 2px solid #EA2AD7;
 border-radius: 50%;
 padding: 20px 10px;

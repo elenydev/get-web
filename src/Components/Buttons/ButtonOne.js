@@ -9,6 +9,7 @@ box-shadow: -4px 4px 0 0 #EA2AD7;;
 cursor: pointer;
 font-weight: 700;
 transition: .3s ease-in;
+margin: 3px 0;
 &:hover{
     box-shadow: 4px -4px 0 0 #EA2AD7;;
 }

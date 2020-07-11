@@ -109,7 +109,7 @@ const Burger = styled.div`
     cursor: pointer;
     display: block;
     position: relative;
-    padding-left: 10px;
+    padding-left: 30px;
     width: 10%;
     span{
         display: block;

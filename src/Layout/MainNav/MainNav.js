@@ -20,7 +20,7 @@ width: 100%;
 height: 13vh;
 background: black;
 color: white;
-justify-content: center;
+justify-content: space-between;
 align-items: center;
 position: fixed;
 top: 0;
@@ -40,11 +40,9 @@ letter-spacing: 3px;
 display: flex;
 align-items: center;
 justify-content: center;
-margin-right: 30em;
+margin-left: 5%;
 
-@media(max-width:1280px){
-    margin-right: 15em;
-}
+
 @media(max-width: 998px){
     margin: auto;
     align-self: center; 
@@ -62,6 +60,7 @@ transition: 0.3s ease-in;
 background-color: black;
 position: relative;
 z-index:5;
+margin-right: 5%;
 
 @media(max-width: 998px){
     flex-direction: column;
@@ -70,6 +69,7 @@ z-index:5;
     width: 100vw;   
     padding-bottom: 65px;
     right: ${props => props.visible ? `0%` : `-100%`};
+    margin: 0;
 
 }
 

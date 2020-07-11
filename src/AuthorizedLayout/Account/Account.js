@@ -6,18 +6,16 @@ import Navigation from '../Navigation/Navigation'
 const Wrapper = styled.div`
 display: flex;
 width: 80%;
-height: 100vh;
-align-items: center;
-flex-direction: column;
-justify-content: flex-start;
+min-height: 100vh;
+align-items: flex-start;
+flex-direction: row;
+justify-content: center;
 flex-wrap: wrap;
 margin: 5% auto;
-padding-top: 8%;
 @media(max-width: 760px) and (orientation: portrait){
     padding-top: 25%;
     width: 90%;
-    flex-direction: row;
-    justify-content: center;
+
 }
 @media(max-width: 760px) and (orientation: landscape){
     flex-direction: row;
@@ -28,29 +26,32 @@ const Data = styled.div`
 display: flex;
 align-items: center;
 justify-content: center;
-width: 30%;
-align-self: flex-start;
+width: 60%;
+align-self: center;
 height: 15%;
 font-size: 1.5em;
 box-shadow: 0 3px 11px #00000029;
 font-weight: 900;
 text-align: center;
-margin-bottom: 2%;
+margin-bottom: 1%;
+padding: 10px 15px;
 @media(max-width: 760px){
     width: 90%;
     font-size: 1em;
     align-self: center;
+    margin: 3%;
 }
 `
 const UpcomingEvents = styled.div`
 display: flex;
 width: 60%;
-height: 71%;
+min-height: 71%;
 align-items: center;
-align-self: flex-end;
+align-self: flex-start;
 flex-wrap: wrap;
 justify-content: center;
-box-shadow: 0 3px 11px #00000029;
+/* box-shadow: 0 3px 11px #00000029; */
+padding: 15px 0;
 @media(max-width: 760px){
     width: 90%;
     align-self: flex-end;
@@ -59,14 +60,15 @@ box-shadow: 0 3px 11px #00000029;
 const Announcements = styled.div`
 display: flex;
 width: 30%;
-height: 53%;
+min-height: 50%;
 justify-content: center;
 align-items: center;
 align-self: flex-start;
 flex-wrap: wrap;
-box-shadow: 0 3px 11px #00000029;
+padding: 15px 0;
+/* box-shadow: 0 3px 11px #00000029; */
 margin-bottom: 10px;
-@media(max-width: 760px){
+@media(max-width: 830px){
     width: 90%;
     align-self: center;
 }
@@ -106,7 +108,7 @@ width: 100%;
 align-items: center;
 justify-content: center;
 font-weight: 900;
-margin: 10px 0;
+margin: 5px 0;
 `
 const Event = styled.div`
 display: flex;
@@ -192,20 +194,6 @@ const Account = () =>{
         <Navigation />
             <Wrapper>
             <Data>Today is: {output}</Data>
-            <Announcements>
-                <P>Latest announcements</P>
-            {annoucements.length === 0 && <P>We don't have any annoucements :)</P>}
-                {annoucements.length >= 1 &&  
-                <Announcement>
-                    <AnnouncementTitle>{annoucements[annoucements.length-1].Title}</AnnouncementTitle>
-                    <AnnouncementContent>{annoucements[annoucements.length-1].Content}</AnnouncementContent>
-                </Announcement>}
-                {annoucements.length >= 2 &&  
-                <Announcement>
-                    <AnnouncementTitle>{annoucements[annoucements.length-2].Title}</AnnouncementTitle>
-                    <AnnouncementContent>{annoucements[annoucements.length-2].Content}</AnnouncementContent>
-                </Announcement>}
-            </Announcements>
             <UpcomingEvents>
                 <P>Upcoming Events</P>
             {events.length === 0 && <P>We don't plan eny events :(</P>}
@@ -225,6 +213,21 @@ const Account = () =>{
                 }
                 
             </UpcomingEvents>
+            <Announcements>
+                <P>Latest announcements</P>
+            {annoucements.length === 0 && <P>We don't have any annoucements :)</P>}
+                {annoucements.length >= 1 &&  
+                <Announcement>
+                    <AnnouncementTitle>{annoucements[annoucements.length-1].Title}</AnnouncementTitle>
+                    <AnnouncementContent>{annoucements[annoucements.length-1].Content}</AnnouncementContent>
+                </Announcement>}
+                {annoucements.length >= 2 &&  
+                <Announcement>
+                    <AnnouncementTitle>{annoucements[annoucements.length-2].Title}</AnnouncementTitle>
+                    <AnnouncementContent>{annoucements[annoucements.length-2].Content}</AnnouncementContent>
+                </Announcement>}
+            </Announcements>
+            
             
             
             </Wrapper>        

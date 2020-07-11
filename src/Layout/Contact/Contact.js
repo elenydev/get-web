@@ -12,7 +12,7 @@ const MenuFooter= styled.div`
     display: flex;
     width: 100%;
     text-align: center;
-    font-size: 0.7em;
+    font-size: 0.8em;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
@@ -110,6 +110,7 @@ width: 100%;
 padding: 10px;
 color: white;
 font-weight: 700;
+line-height: 1.2;
 `
 const RightContainer = styled.div`
 display: flex;
@@ -172,10 +173,11 @@ textarea{
     user-select: none;
     outline: none;
     margin: 5px 0;
+    padding: 5px 15px 2px;
     height: 300px;
     &::placeholder{
         color: darkgray;
-        padding: 10px;
+        
     }
 
 }

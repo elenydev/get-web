@@ -69,6 +69,7 @@ color: white;
 width: 150px;
 padding: 10px 20px;
 cursor: pointer;
+margin-right: 5px;
 @media(max-width: 760px){
     width: 100px;
 }
@@ -80,6 +81,7 @@ color: white;
 width: 150px;
 padding: 10px 20px;
 cursor: pointer;
+margin-left: 5px;
 @media(max-width: 760px){
     width: 100px;
 }

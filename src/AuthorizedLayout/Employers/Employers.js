@@ -36,18 +36,21 @@ display: flex;
 align-items: center;
 justify-content: center;
 margin: 5px;
+width: 25%;
 `
 const EmployeRole = styled.div`
 display: flex;
 align-items: center;
 justify-content: center;
 margin: 5px;
+width: 25%;
 `
 const EmployeEmail = styled.div`
 display: flex;
 align-items: center;
 justify-content: center;
 margin: 5px;
+width: 25%;
 `
 const AddTask = styled.button`
 display: block;
