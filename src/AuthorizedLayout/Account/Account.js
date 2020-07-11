@@ -17,9 +17,8 @@ margin: 5% auto;
     width: 90%;
 
 }
-@media(max-width: 760px) and (orientation: landscape){
-    flex-direction: row;
-    justify-content: center;
+@media(max-width: 830px) and (orientation: landscape){
+    margin: 10% auto;
 }
 `
 const Data = styled.div`
