@@ -1,4 +1,4 @@
-get-web is an aplication that allows to dynamically change the content of the 'main' page from the 'control panel' that is created like Jira. 
+Get-web is an aplication that allows to dynamically change the content of the 'main' page from the 'control panel' that is created like Jira. 
 
 Core functionallity:
 -To create 'events' and 'career' section we use fetched data from database
