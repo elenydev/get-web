@@ -1,32 +1,36 @@
-Get-web is an aplication that allows to dynamically change the content of the 'main' page from the 'control panel' that is created like Jira. 
+## Get-web is an aplication that allows to dynamically change the content of the 'main' page from the 'control panel' that is created like Jira. 
 
-Core functionallity:
--To create 'events' and 'career' section we use fetched data from database
--The contant form at the bottom of the page allows send emails which are displayed in control panel of the 'company' 
--At the 'Company' section u can log in to our control panel and if u are on admin account you are allowed to edit data(i will pass the login and password below to check if it works but you can also sing in with Facebook account or GitHub account)
--After sing in you can see fetched data from database which show us latests events and accnouncemenets
--At the task section, admin can add task to specific worker and delete/edit task.
--At the employers section u can add new employee, dismiss someone or add task to specific worker automatically 
--At the event section you can add or delete event
--At the Job offers you can add or delete job offer
--At the Emails section u can see all emails that comes from the contact section 
+## Core functionallity:
+*To create 'events' and 'career' section we use fetched data from database
+*The contant form at the bottom of the page allows send emails which are displayed in control panel of the 'company' 
+*At the 'Company' section u can log in to our control panel and if u are on admin account you are allowed to edit data(i will pass the login and password below to check if it works but you can also sing in with Facebook account or GitHub account)
+*After sing in you can see fetched data from database which show us latests events and accnouncemenets
+*At the task section, admin can add task to specific worker and delete/edit task.
+*At the employers section u can add new employee, dismiss someone or add task to specific worker automatically 
+*At the event section you can add or delete event
+*At the Job offers you can add or delete job offer
+*At the Emails section u can see all emails that comes from the contact section 
 
-All of the data are stored in Firebase/Firestore
+## All of the data are stored in Firebase/Firestore
+*Login and password for specific account:
+*Login: admin@admin.pl password: adminadmin
+*Login: user@user.pl password: useruser
 
-Login and password for specific account:
-Login: admin@admin.pl password: adminadmin
-Login: user@user.pl password: useruser
-
-Used technologies:
--React
--Redux toolkit
--React hook form
--React-router-hash-link
--Styled Components
--Firebase / Firestore
-
+##Used technologies:
+*React
+*Redux toolkit
+*React hook form
+*React-router-hash-link
+*Styled Components
+*Firebase / Firestore
 
 
+## Setup
+To run this project, install it locally using npm:
+
+$ cd ../get-web
+$ npm install
+$ npm start
 
 
 
