@@ -228,7 +228,10 @@ const UpcomingEvents = () =>{
                         <CardContentHeader>{events[events.length-1].Title}</CardContentHeader>
                         <CardContentText>{events[events.length-1].Content}</CardContentText>
                         <CardParagraph>{events[events.length-1].Date}</CardParagraph>
-                        <ButtonOne value={'Sing Up'}></ButtonOne>
+                        <Link  to ='/#contact' 
+                        scroll={el => el.scrollIntoView({ behavior: 'smooth', block: 'end' })}>
+                            <ButtonOne value={'Sing Up'}></ButtonOne>
+                        </Link>
                     </CardContent>
                 </Card>
                 }
@@ -239,7 +242,10 @@ const UpcomingEvents = () =>{
                         <CardContentHeader>{events[events.length-2].Title}</CardContentHeader>
                         <CardContentText>{events[events.length-2].Content}</CardContentText>
                         <CardParagraph>{events[events.length-2].Date}</CardParagraph>
-                        <ButtonOne value={'Sing Up'}></ButtonOne>
+                        <Link  to ='/#contact' 
+                        scroll={el => el.scrollIntoView({ behavior: 'smooth', block: 'end' })}>
+                            <ButtonOne value={'Sing Up'}></ButtonOne>
+                        </Link>
                     </CardContent>
                 </Card>
                 }
@@ -250,7 +256,10 @@ const UpcomingEvents = () =>{
                         <CardContentHeader>{events[events.length-3].Title}</CardContentHeader>
                         <CardContentText>{events[events.length-3].Content}</CardContentText>
                         <CardParagraph>{events[events.length-3].Date}</CardParagraph>
-                        <ButtonOne value={'Sing Up'}></ButtonOne>
+                        <Link  to ='/#contact' 
+                        scroll={el => el.scrollIntoView({ behavior: 'smooth', block: 'end' })}>
+                            <ButtonOne value={'Sing Up'}></ButtonOne>
+                        </Link>
                     </CardContent>
                 </Card>
                 }
@@ -262,7 +271,10 @@ const UpcomingEvents = () =>{
                     <Offer key={offer.id}>
                         <OfferHeader>{offer.Title}</OfferHeader>
                         <OfferContent>{offer.Location}</OfferContent>
-                        <Links to ='/#contact'scroll={el => el.scrollIntoView({ behavior: 'smooth', block: 'end' })}><ButtonOne value={'Apply'}></ButtonOne></Links>
+                        <Links to ='/#contact'scroll={el => el.scrollIntoView({ behavior: 'smooth', block: 'end' })}>
+                            <ButtonOne value={'Apply'}>
+                            </ButtonOne>
+                        </Links>
                     </Offer>
                     )
                 })

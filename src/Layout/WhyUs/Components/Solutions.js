@@ -18,7 +18,7 @@ word-wrap: break-word;
 padding: 10px 0;
 font-size: 1.1em;
 padding-bottom: 15px;
-line-height: 1.2
+line-height: 1.2;
 `
 
 const Solutions = () =>{
