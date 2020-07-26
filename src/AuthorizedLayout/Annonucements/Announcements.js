@@ -112,10 +112,22 @@ const Announcements = () => {
     const { handleSubmit, register} = useForm();
     
     const deleteAnnouncement = async (id) =>{
-        await db.collection('Annoucements').doc(id).delete();
+        await db.collection('Annoucements').doc(id).delete()
+        .then(() => { 
+            console.log('success!, show alert now'); 
+        }) 
+        .catch(err => { 
+            console.log('errorcode', err.code); 
+        });
     }
     const addAnnouncement = async (values) =>{
-        await db.collection('Annoucements').add(values);
+        await db.collection('Annoucements').add(values)
+        .then(() => { 
+            console.log('success!, show alert now'); 
+        }) 
+        .catch(err => { 
+            console.log('errorcode', err.code); 
+        });
     }
     return(
         <>
@@ -132,7 +144,7 @@ const Announcements = () => {
                 </Announcement>
             )
         })}
-        <Popup trigger={<Button style={{margin: '0% 40%'}}>Add Announcement</Button>} position="center">
+        <Popup trigger={<Button style={{margin: '0% 40%'}}>Add Announcement</Button>}>
                     <Form onSubmit={handleSubmit(addAnnouncement)}>
                     <input type="text" ref={register({ required: true })} name="Title" placeholder="Short Title" />
                     <input type="text" ref={register({ required: true })} name="Content" placeholder="Announcement" />

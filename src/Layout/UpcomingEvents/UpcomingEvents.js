@@ -3,10 +3,8 @@ import styled from 'styled-components'
 import Event1 from '../../assets/logos/Event1.jpg'
 import Event2 from '../../assets/logos/Event2.jpg'
 import Event3 from '../../assets/logos/Event3.jpg'
-import ButtonOne from '../../Components/Buttons/ButtonOne'
 import { HashLink as Link } from 'react-router-hash-link';
 import {db} from '../../services/firebase'
-
 
 const Wrapper = styled.div`
 display: flex;
@@ -80,6 +78,18 @@ padding-top: 5%;
 `;
 const Links= styled(Link)`
 text-decoration: none;
+color: black;
+padding: 10px 5px;
+border: 2px solid #EA2AD7;
+box-shadow: -4px 4px 0 0 #EA2AD7;;
+cursor: pointer;
+font-weight: 700;
+transition: .3s ease-in;
+margin: 3px 0;
+font-size: 0.65em;
+&:hover{
+    box-shadow: 4px -4px 0 0 #EA2AD7;;
+}
 `
 
 const Paragraph = styled.p`
@@ -228,10 +238,10 @@ const UpcomingEvents = () =>{
                         <CardContentHeader>{events[events.length-1].Title}</CardContentHeader>
                         <CardContentText>{events[events.length-1].Content}</CardContentText>
                         <CardParagraph>{events[events.length-1].Date}</CardParagraph>
-                        <Link  to ='/#contact' 
+                        <Links  to ='/#contact' 
                         scroll={el => el.scrollIntoView({ behavior: 'smooth', block: 'end' })}>
-                            <ButtonOne value={'Sing Up'}></ButtonOne>
-                        </Link>
+                            Sing up
+                        </Links>
                     </CardContent>
                 </Card>
                 }
@@ -242,10 +252,10 @@ const UpcomingEvents = () =>{
                         <CardContentHeader>{events[events.length-2].Title}</CardContentHeader>
                         <CardContentText>{events[events.length-2].Content}</CardContentText>
                         <CardParagraph>{events[events.length-2].Date}</CardParagraph>
-                        <Link  to ='/#contact' 
+                        <Links  to ='/#contact' 
                         scroll={el => el.scrollIntoView({ behavior: 'smooth', block: 'end' })}>
-                            <ButtonOne value={'Sing Up'}></ButtonOne>
-                        </Link>
+                            Sing up
+                        </Links>
                     </CardContent>
                 </Card>
                 }
@@ -256,10 +266,10 @@ const UpcomingEvents = () =>{
                         <CardContentHeader>{events[events.length-3].Title}</CardContentHeader>
                         <CardContentText>{events[events.length-3].Content}</CardContentText>
                         <CardParagraph>{events[events.length-3].Date}</CardParagraph>
-                        <Link  to ='/#contact' 
+                        <Links  to ='/#contact' 
                         scroll={el => el.scrollIntoView({ behavior: 'smooth', block: 'end' })}>
-                            <ButtonOne value={'Sing Up'}></ButtonOne>
-                        </Link>
+                            Sign up
+                        </Links>
                     </CardContent>
                 </Card>
                 }
@@ -272,8 +282,7 @@ const UpcomingEvents = () =>{
                         <OfferHeader>{offer.Title}</OfferHeader>
                         <OfferContent>{offer.Location}</OfferContent>
                         <Links to ='/#contact'scroll={el => el.scrollIntoView({ behavior: 'smooth', block: 'end' })}>
-                            <ButtonOne value={'Apply'}>
-                            </ButtonOne>
+                            Apply
                         </Links>
                     </Offer>
                     )

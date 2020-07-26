@@ -119,15 +119,33 @@ const Employers = () => {
     const { handleSubmit, register, errors } = useForm();
 
     const sendTask = async (values,e) => {
-    await db.collection('Tasks').add(values);
+    await db.collection('Tasks').add(values)
+    .then(() => { 
+        console.log('success!, show alert now'); 
+    }) 
+    .catch(err => { 
+        console.log('errorcode', err.code); 
+    });
     e.target.reset();
     }
     const dismiss = async (id) =>{
-        await db.collection('Employers').doc(id).delete();
+        await db.collection('Employers').doc(id).delete()
+        .then(() => { 
+            console.log('success!, show alert now'); 
+        }) 
+        .catch(err => { 
+            console.log('errorcode', err.code); 
+        });
 
     }
     const hire = async (values) =>{
-        await db.collection('Employers').add(values);
+        await db.collection('Employers').add(values)
+        .then(() => { 
+            console.log('success!, show alert now'); 
+        }) 
+        .catch(err => { 
+            console.log('errorcode', err.code); 
+        });
     }
     return(
         <>
@@ -142,7 +160,7 @@ const Employers = () => {
                     <EmployeRole>{employe.role}</EmployeRole>
                     <EmployeEmail>{employe.email}</EmployeEmail>
                     
-                    <Popup trigger={<AddTask>Add task</AddTask>} position="center">
+                    <Popup trigger={<AddTask>Add task</AddTask>} >
                     <Form onSubmit={handleSubmit(sendTask)}>
                     <input type="text" ref={register({ required: true })} name="content" placeholder={errors.message ? 'This field is required' : 'What to do?'}/>
                     <input type="text" ref={register({ required: true })} name="person" value={employe.fullname} style={{display: 'none'}}/>
@@ -155,7 +173,7 @@ const Employers = () => {
                 </Employe>
                 )
             })}
-            <Popup trigger={<AddTask style={{margin: '0 40%'}}>Hire employe</AddTask>} position="center">
+            <Popup trigger={<AddTask style={{margin: '0 40%'}}>Hire employe</AddTask>} >
                     <Form onSubmit={handleSubmit(hire)}>
                     <input type="text" ref={register({ required: true })} name="fullname" placeholder={errors.message ? 'This field is required' : 'Fullname'}/>
                     <input type="text" ref={register({ required: true })} name="role" placeholder={errors.message ? 'This field is required' : 'Role'}  />

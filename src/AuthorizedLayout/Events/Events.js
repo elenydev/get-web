@@ -124,12 +124,23 @@ const Events = () => {
     
         }, [])
     const { handleSubmit, register} = useForm();
-
     const deleteEvent = async (id) => {
-        await db.collection('Events').doc(id).delete();
+        await db.collection('Events').doc(id).delete()
+        .then(() => { 
+            console.log('success!, show alert now'); 
+        }) 
+        .catch(err => { 
+            console.log('errorcode', err.code); 
+        });
     }
     const addEvent = async (values) =>{
-        await db.collection('Events').add(values);
+        await db.collection('Events').add(values)
+        .then(() => { 
+            console.log('success!, show alert now'); 
+        }) 
+        .catch(err => { 
+            console.log('errorcode', err.code); 
+        });
     }
 
     return(
@@ -148,7 +159,7 @@ const Events = () => {
                 </Event>
             )
         })}
-         <Popup trigger={<Button style={{margin: '0% 40%'}}>Add Event</Button>} position="center">
+         <Popup trigger={<Button style={{margin: '0% 40%'}}>Add Event</Button>} >
                     <Form onSubmit={handleSubmit(addEvent)}>
                     <input type="text" ref={register({ required: true })} name="Title" placeholder="Short Title" />
                     <input type="text" ref={register({ required: true })} name="Content" placeholder="Info about event" />

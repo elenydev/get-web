@@ -86,8 +86,14 @@ const Emails = () => {
 
 
     const DeleteMail = async (id) => {
-        db.collection("Emails").doc(id).delete();
-        console.log(id);
+        db.collection("Emails").doc(id).delete()
+        .then(() => { 
+            console.log('success!, show alert now'); 
+        }) 
+        .catch(err => { 
+            console.log('errorcode', err.code); 
+        });
+        
     }
 
     return(

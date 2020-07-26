@@ -139,11 +139,23 @@ const TasksManager = () => {
     const { handleSubmit, register} = useForm();
     
     const sendTask = async (values,e) => {
-    await db.collection('Tasks').add(values);
+    await db.collection('Tasks').add(values)
+        .then(() => { 
+            console.log('success!, show alert now'); 
+        }) 
+        .catch(err => { 
+            console.log('errorcode', err.code); 
+        });
     e.target.reset();
     }
     const deleteTask = async (id) =>{
-        await db.collection('Tasks').doc(id).delete();
+        await db.collection('Tasks').doc(id).delete()
+        .then(() => { 
+            console.log('success!, show alert now'); 
+        }) 
+        .catch(err => { 
+            console.log('errorcode', err.code); 
+        });
     }
     const handleChange = (e) =>{
     setEditContent(e.target.value);
@@ -153,6 +165,12 @@ const TasksManager = () => {
     event.preventDefault();
         await db.collection('Tasks').doc(id).update({
             content: editContent
+        })
+        .then(() => { 
+            console.log('success!, show alert now'); 
+        }) 
+        .catch(err => { 
+            console.log('errorcode', err.code); 
         });
     }
     return(
@@ -167,7 +185,7 @@ const TasksManager = () => {
                         <TaskContent>{task.content}</TaskContent>
                         <TaskPerson>{task.person}</TaskPerson>
                         <DeleteTask onClick={() => deleteTask(task.id)}>Delete</DeleteTask>
-                    <Popup trigger={<DeleteTask>Edit</DeleteTask>} position="center" closeOnSubmit>
+                    <Popup trigger={<DeleteTask>Edit</DeleteTask>} closeOnSubmit>
                         <Form>
                             <input type="text" name="content" onChange={handleChange} defaultValue={task.content}/>
                             <button type="submit" onClick={(event) => editTask(event, task.id)}>Edit</button>
@@ -177,13 +195,13 @@ const TasksManager = () => {
 
                 )
             })}
-            <Popup trigger={<AddTask>Add task</AddTask>} position="center">
+            <Popup trigger={<AddTask>Add task</AddTask>} >
                     <Form onSubmit={handleSubmit(sendTask)}>
                     <input type="text" ref={register({ required: true })} name="content" />
                     <select ref={register({ required: true })} name="person" placeholder="Select employe">
                         {employers.map(employe =>{
                             return(
-                                <option value={employe.fullname}>{employe.fullname}</option>
+                                <option key={employe.id} value={employe.fullname}>{employe.fullname}</option>
                             )
                         })}
                     </select>

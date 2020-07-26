@@ -112,10 +112,22 @@ const JobOffer = () => {
     const { handleSubmit, register} = useForm();
 
     const addOffer = async (values) =>{
-    await db.collection('JobOffers').add(values);
+    await db.collection('JobOffers').add(values)
+        .then(() => { 
+            console.log('success!, show alert now'); 
+        }) 
+        .catch(err => { 
+            console.log('errorcode', err.code); 
+        });
     }
     const deleteOffer = async (id) =>{
-        await db.collection('JobOffers').doc(id).delete();
+        await db.collection('JobOffers').doc(id).delete()
+        .then(() => { 
+            console.log('success!, show alert now'); 
+        }) 
+        .catch(err => { 
+            console.log('errorcode', err.code); 
+        });
     }
 
 
@@ -135,7 +147,7 @@ const JobOffer = () => {
                     
                 )
             })}
-            <Popup trigger={<Button style={{margin: '0% 40%'}}>Add Offer</Button>} position="center">
+            <Popup trigger={<Button style={{margin: '0% 40%'}}>Add Offer</Button>} >
                     <Form onSubmit={handleSubmit(addOffer)}>
                     <input type="text" ref={register({ required: true })} name="Title" placeholder="Job position" />
                     <input type="text" ref={register({ required: true })} name="Location" placeholder="Location" />

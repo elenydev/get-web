@@ -9,7 +9,6 @@ import styled from 'styled-components'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLink } from '@fortawesome/free-solid-svg-icons'
-import ButtonOne from '../../Components/Buttons/ButtonOne'
 import { HashLink as Link } from 'react-router-hash-link';
  
 
@@ -81,8 +80,11 @@ color: white;
 list-style-type: none;
 margin: 10px;
 font-weight: 600;
+font-size: 0.8em;
 cursor: pointer;
-
+&.white{
+    color: black;
+}
 `;
 
 const Li = styled.li`
@@ -108,6 +110,19 @@ transition-delay: 0.4s;
 
 }
 &.noBefore{
+    display: block;
+    padding: 10px 5px;
+    border: 2px solid #EA2AD7;
+    box-shadow: -4px 4px 0 0 #EA2AD7;;
+    cursor: pointer;
+    font-weight: 700;
+    transition: .3s ease-in;
+    margin: 3px 0;
+    background-color: white;
+    color: black;
+&:hover{
+    box-shadow: 4px -4px 0 0 #EA2AD7;;
+}
     &:before{
         display: none;
     }
@@ -213,9 +228,9 @@ const MainNav = (props) =>{
                             >Events</Links>
                         </Li>
                         <Li className='noBefore'> 
-                            <Links to ='/#contact' onClick={() => setMenuVisibility(false)}
+                            <Links to ='/#contact' className="white" onClick={() => setMenuVisibility(false)}
                             scroll={el => el.scrollIntoView({ behavior: 'smooth', block: 'end' })}
-                            ><ButtonOne value={'Contact us'}/></Links>
+                            >Contact us</Links>
                         </Li>
                         <MenuFooter >
                         <p>Design & Development</p>
