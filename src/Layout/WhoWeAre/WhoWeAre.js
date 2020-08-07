@@ -129,7 +129,7 @@ const WhoWeAre = () =>{
              
             </HeaderWrapper>
             <SubText>Just check our offer and let us create your website that u will be proud off!</SubText>
-            <Links to ='/#contact'scroll={el => el.scrollIntoView({ behavior: 'smooth', block: 'end' })}>
+            <Links to ='/#offer'scroll={el => el.scrollIntoView({ behavior: 'smooth', block: 'end' })}>
                 <Circle>See more 
                     <FontAwesomeIcon icon={faArrowCircleDown} style={{
                     position: 'absolute',
