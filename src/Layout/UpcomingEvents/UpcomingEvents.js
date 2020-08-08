@@ -240,7 +240,7 @@ const UpcomingEvents = () =>{
                         <CardParagraph>{events[events.length-1].Date}</CardParagraph>
                         <Links  to ='/#contact' 
                         scroll={el => el.scrollIntoView({ behavior: 'smooth', block: 'end' })}>
-                            Sing up
+                            Sign up
                         </Links>
                     </CardContent>
                 </Card>
@@ -254,7 +254,7 @@ const UpcomingEvents = () =>{
                         <CardParagraph>{events[events.length-2].Date}</CardParagraph>
                         <Links  to ='/#contact' 
                         scroll={el => el.scrollIntoView({ behavior: 'smooth', block: 'end' })}>
-                            Sing up
+                            Sign up
                         </Links>
                     </CardContent>
                 </Card>
