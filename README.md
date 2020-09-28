@@ -1,5 +1,5 @@
 ## Get-web is an aplication that allows to dynamically change the content of the 'main' page from the 'control panel' that is created like Jira. 
-## LIVE: https://quirky-bose-c70458.netlify.app/
+## LIVE: https://get-we.web.app/
 ## Core functionallity:
 * To create 'events' and 'career' section we use fetched data from database
 * The contant form at the bottom of the page allows send emails which are displayed in control panel of the 'company' 
